@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Generation Prompt Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Image Generation Prompt Builder</h1>
+        
+        <form id="promptForm">
+            <!-- Basic Information Section -->
+            <section class="form-section">
+                <h2>Basic Information</h2>
+                
+                <div class="form-group">
+                    <label>
+                        Purpose
+                        <span class="info-icon" data-field="purpose">ℹ️</span>
+                        <div class="tooltip">Purpose of the image (e.g., "Social media post", "Marketing campaign", "Product advertisement")</div>
+                    </label>
+                    <input type="text" name="purpose" placeholder="Enter purpose">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Format
+                        <span class="info-icon" data-field="format">ℹ️</span>
+                        <div class="tooltip">Image format (e.g., "Banner", "Square", "Portrait", "Landscape", "Story")</div>
+                    </label>
+                    <input type="text" name="format" placeholder="Enter format">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Aspect Ratio
+                        <span class="info-icon" data-field="aspect_ratio">ℹ️</span>
+                        <div class="tooltip">Aspect ratio (e.g., "16:9", "1:1", "4:5", "9:16")</div>
+                    </label>
+                    <input type="text" name="aspect_ratio" placeholder="Enter aspect ratio">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Orientation
+                        <span class="info-icon" data-field="orientation">ℹ️</span>
+                        <div class="tooltip">Orientation (e.g., "Portrait", "Landscape", "Square")</div>
+                    </label>
+                    <input type="text" name="orientation" placeholder="Enter orientation">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Language
+                        <span class="info-icon" data-field="language">ℹ️</span>
+                        <div class="tooltip">Language for text content (e.g., "English", "Spanish", "French")</div>
+                    </label>
+                    <input type="text" name="language" placeholder="Enter language">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Subject
+                        <span class="info-icon" data-field="subject">ℹ️</span>
+                        <div class="tooltip">Main subject of the image (e.g., "Product", "Person", "Landscape", "Animal")</div>
+                    </label>
+                    <input type="text" name="subject" placeholder="Enter subject">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Campaign Type
+                        <span class="info-icon" data-field="campaign_type">ℹ️</span>
+                        <div class="tooltip">Type of campaign (e.g., "Brand awareness", "Product launch", "Seasonal promotion")</div>
+                    </label>
+                    <input type="text" name="campaign_type" placeholder="Enter campaign type">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Target Audience
+                        <span class="info-icon" data-field="target_audience">ℹ️</span>
+                        <div class="tooltip">Target audience (e.g., "Millennials", "Tech professionals", "Families", "Seniors")</div>
+                    </label>
+                    <input type="text" name="target_audience" placeholder="Enter target audience">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Core Concept
+                        <span class="info-icon" data-field="core_concept">ℹ️</span>
+                        <div class="tooltip">Core concept or message (e.g., "Innovation", "Comfort", "Luxury", "Sustainability")</div>
+                    </label>
+                    <input type="text" name="core_concept" placeholder="Enter core concept">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Brand Personality
+                        <span class="info-icon" data-field="brand_personality">ℹ️</span>
+                        <div class="tooltip">Brand personality traits (e.g., "Playful", "Professional", "Bold", "Elegant")</div>
+                    </label>
+                    <input type="text" name="brand_personality" placeholder="Enter brand personality">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Emotional Goal
+                        <span class="info-icon" data-field="emotional_goal">ℹ️</span>
+                        <div class="tooltip">Emotional response desired (e.g., "Inspire", "Excite", "Calm", "Motivate")</div>
+                    </label>
+                    <input type="text" name="emotional_goal" placeholder="Enter emotional goal">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Scene Description
+                        <span class="info-icon" data-field="scene_description">ℹ️</span>
+                        <div class="tooltip">Description of the scene (e.g., "Modern office with natural lighting", "Outdoor cafe in sunset")</div>
+                    </label>
+                    <input type="text" name="scene_description" placeholder="Enter scene description">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Narrative Context
+                        <span class="info-icon" data-field="narrative_context">ℹ️</span>
+                        <div class="tooltip">Story or context behind the image (e.g., "Person discovering new technology", "Family enjoying quality time")</div>
+                    </label>
+                    <input type="text" name="narrative_context" placeholder="Enter narrative context">
+                </div>
+            </section>
+
+            <!-- Visual Style Section -->
+            <section class="form-section">
+                <h2>Visual Style</h2>
+
+                <div class="form-group">
+                    <label>
+                        Design Trend
+                        <span class="info-icon" data-field="visual_style.design_trend">ℹ️</span>
+                        <div class="tooltip">Current design trends (e.g., "Minimalist", "Neumorphism", "Brutalism", "Glassmorphism")</div>
+                    </label>
+                    <input type="text" name="visual_style.design_trend" placeholder="Enter design trend">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Style Reference
+                        <span class="info-icon" data-field="visual_style.style_reference">ℹ️</span>
+                        <div class="tooltip">Style references (e.g., "Bauhaus", "Art Deco", "Scandinavian", "Japanese minimalism")</div>
+                    </label>
+                    <input type="text" name="visual_style.style_reference" placeholder="Enter style reference">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Art Direction
+                        <span class="info-icon" data-field="visual_style.art_direction">ℹ️</span>
+                        <div class="tooltip">Art direction style (e.g., "Editorial", "Commercial", "Documentary", "Conceptual")</div>
+                    </label>
+                    <input type="text" name="visual_style.art_direction" placeholder="Enter art direction">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Aesthetic Keywords
+                        <span class="info-icon" data-field="visual_style.aesthetic_keywords">ℹ️</span>
+                        <div class="tooltip">Comma-separated keywords (e.g., "Clean, Modern, Vibrant, Sophisticated")</div>
+                    </label>
+                    <input type="text" name="visual_style.aesthetic_keywords" placeholder="Enter keywords (comma-separated)">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Color Palette
+                        <span class="info-icon" data-field="visual_style.color_palette">ℹ️</span>
+                        <div class="tooltip">Comma-separated colors (e.g., "#FF5733, #3498DB, #2ECC71")</div>
+                    </label>
+                    <input type="text" name="visual_style.color_palette" placeholder="Enter colors (comma-separated)">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Color Psychology
+                        <span class="info-icon" data-field="visual_style.color_psychology">ℹ️</span>
+                        <div class="tooltip">Color psychology intent (e.g., "Energetic", "Tranquil", "Trustworthy", "Luxurious")</div>
+                    </label>
+                    <input type="text" name="visual_style.color_psychology" placeholder="Enter color psychology">
+                </div>
+
+                <h3>Background</h3>
+                <div class="form-group">
+                    <label>
+                        Background Type
+                        <span class="info-icon" data-field="visual_style.background.type">ℹ️</span>
+                        <div class="tooltip">Background type (e.g., "Solid", "Gradient", "Image", "Pattern")</div>
+                    </label>
+                    <input type="text" name="visual_style.background.type" placeholder="Enter background type">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Background Texture
+                        <span class="info-icon" data-field="visual_style.background.texture">ℹ️</span>
+                        <div class="tooltip">Texture style (e.g., "Smooth", "Rough", "Paper", "Fabric")</div>
+                    </label>
+                    <input type="text" name="visual_style.background.texture" placeholder="Enter texture">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Background Gradient
+                        <span class="info-icon" data-field="visual_style.background.gradient">ℹ️</span>
+                        <div class="tooltip">Gradient description (e.g., "Blue to purple", "Sunset colors")</div>
+                    </label>
+                    <input type="text" name="visual_style.background.gradient" placeholder="Enter gradient">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Background Environment
+                        <span class="info-icon" data-field="visual_style.background.environment">ℹ️</span>
+                        <div class="tooltip">Environment setting (e.g., "Urban", "Natural", "Abstract", "Studio")</div>
+                    </label>
+                    <input type="text" name="visual_style.background.environment" placeholder="Enter environment">
+                </div>
+
+                <h3>Composition</h3>
+                <div class="form-group">
+                    <label>
+                        Layout
+                        <span class="info-icon" data-field="visual_style.composition.layout">ℹ️</span>
+                        <div class="tooltip">Layout style (e.g., "Rule of thirds", "Centered", "Asymmetric", "Grid-based")</div>
+                    </label>
+                    <input type="text" name="visual_style.composition.layout" placeholder="Enter layout">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Grid System
+                        <span class="info-icon" data-field="visual_style.composition.grid_system">ℹ️</span>
+                        <div class="tooltip">Grid system (e.g., "12-column", "Modular", "Golden ratio")</div>
+                    </label>
+                    <input type="text" name="visual_style.composition.grid_system" placeholder="Enter grid system">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Visual Hierarchy
+                        <span class="info-icon" data-field="visual_style.composition.visual_hierarchy">ℹ️</span>
+                        <div class="tooltip">Hierarchy approach (e.g., "Size-based", "Color contrast", "Depth")</div>
+                    </label>
+                    <input type="text" name="visual_style.composition.visual_hierarchy" placeholder="Enter visual hierarchy">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Focal Point
+                        <span class="info-icon" data-field="visual_style.composition.focal_point">ℹ️</span>
+                        <div class="tooltip">Main focal point (e.g., "Center", "Top-left", "Bottom-right")</div>
+                    </label>
+                    <input type="text" name="visual_style.composition.focal_point" placeholder="Enter focal point">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Negative Space
+                        <span class="info-icon" data-field="visual_style.composition.negative_space">ℹ️</span>
+                        <div class="tooltip">Negative space usage (e.g., "Minimal", "Generous", "Balanced")</div>
+                    </label>
+                    <input type="text" name="visual_style.composition.negative_space" placeholder="Enter negative space">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Balance
+                        <span class="info-icon" data-field="visual_style.composition.balance">ℹ️</span>
+                        <div class="tooltip">Balance type (e.g., "Symmetric", "Asymmetric", "Radial")</div>
+                    </label>
+                    <input type="text" name="visual_style.composition.balance" placeholder="Enter balance">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Depth
+                        <span class="info-icon" data-field="visual_style.composition.depth">ℹ️</span>
+                        <div class="tooltip">Depth effect (e.g., "Flat", "Shallow", "Deep", "Layered")</div>
+                    </label>
+                    <input type="text" name="visual_style.composition.depth" placeholder="Enter depth">
+                </div>
+
+                <h3>Lighting</h3>
+                <div class="form-group">
+                    <label>
+                        Lighting Type
+                        <span class="info-icon" data-field="visual_style.lighting.type">ℹ️</span>
+                        <div class="tooltip">Lighting type (e.g., "Natural", "Studio", "Ambient", "Dramatic")</div>
+                    </label>
+                    <input type="text" name="visual_style.lighting.type" placeholder="Enter lighting type">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Lighting Mood
+                        <span class="info-icon" data-field="visual_style.lighting.mood">ℹ️</span>
+                        <div class="tooltip">Lighting mood (e.g., "Bright", "Moody", "Soft", "Harsh")</div>
+                    </label>
+                    <input type="text" name="visual_style.lighting.mood" placeholder="Enter lighting mood">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Key Light
+                        <span class="info-icon" data-field="visual_style.lighting.key_light">ℹ️</span>
+                        <div class="tooltip">Key light description (e.g., "Top-left, warm", "Front, soft")</div>
+                    </label>
+                    <input type="text" name="visual_style.lighting.key_light" placeholder="Enter key light">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Fill Light
+                        <span class="info-icon" data-field="visual_style.lighting.fill_light">ℹ️</span>
+                        <div class="tooltip">Fill light description (e.g., "Opposite side, subtle", "Bounce light")</div>
+                    </label>
+                    <input type="text" name="visual_style.lighting.fill_light" placeholder="Enter fill light">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Rim Light
+                        <span class="info-icon" data-field="visual_style.lighting.rim_light">ℹ️</span>
+                        <div class="tooltip">Rim light (e.g., "Back-lit", "Edge highlight", "None")</div>
+                    </label>
+                    <input type="text" name="visual_style.lighting.rim_light" placeholder="Enter rim light">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Shadow Style
+                        <span class="info-icon" data-field="visual_style.lighting.shadow_style">ℹ️</span>
+                        <div class="tooltip">Shadow style (e.g., "Soft", "Hard", "Long", "Minimal")</div>
+                    </label>
+                    <input type="text" name="visual_style.lighting.shadow_style" placeholder="Enter shadow style">
+                </div>
+
+                <h3>Effects</h3>
+                <div class="form-group">
+                    <label>
+                        Glow
+                        <span class="info-icon" data-field="visual_style.effects.glow">ℹ️</span>
+                        <div class="tooltip">Glow effect (e.g., "Soft glow", "Neon glow", "None")</div>
+                    </label>
+                    <input type="text" name="visual_style.effects.glow" placeholder="Enter glow">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Blur
+                        <span class="info-icon" data-field="visual_style.effects.blur">ℹ️</span>
+                        <div class="tooltip">Blur effect (e.g., "Background blur", "Motion blur", "None")</div>
+                    </label>
+                    <input type="text" name="visual_style.effects.blur" placeholder="Enter blur">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Particles
+                        <span class="info-icon" data-field="visual_style.effects.particles">ℹ️</span>
+                        <div class="tooltip">Particle effects (e.g., "Dust", "Sparkles", "Confetti", "None")</div>
+                    </label>
+                    <input type="text" name="visual_style.effects.particles" placeholder="Enter particles">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Reflections
+                        <span class="info-icon" data-field="visual_style.effects.reflections">ℹ️</span>
+                        <div class="tooltip">Reflection effects (e.g., "Water", "Glass", "Mirror", "None")</div>
+                    </label>
+                    <input type="text" name="visual_style.effects.reflections" placeholder="Enter reflections">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Atmosphere
+                        <span class="info-icon" data-field="visual_style.effects.atmosphere">ℹ️</span>
+                        <div class="tooltip">Atmospheric effects (e.g., "Fog", "Haze", "Sun rays", "Clean")</div>
+                    </label>
+                    <input type="text" name="visual_style.effects.atmosphere" placeholder="Enter atmosphere">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Realism Level
+                        <span class="info-icon" data-field="visual_style.realism_level">ℹ️</span>
+                        <div class="tooltip">Realism level (e.g., "Photorealistic", "Semi-realistic", "Stylized", "Abstract")</div>
+                    </label>
+                    <input type="text" name="visual_style.realism_level" placeholder="Enter realism level">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Render Style
+                        <span class="info-icon" data-field="visual_style.render_style">ℹ️</span>
+                        <div class="tooltip">Render style (e.g., "3D render", "Illustration", "Photography", "Mixed media")</div>
+                    </label>
+                    <input type="text" name="visual_style.render_style" placeholder="Enter render style">
+                </div>
+            </section>
+
+            <!-- Subjects and Elements Section -->
+            <section class="form-section">
+                <h2>Subjects and Elements</h2>
+
+                <h3>Main Subject</h3>
+                <div class="form-group">
+                    <label>
+                        Subject Type
+                        <span class="info-icon" data-field="subjects_and_elements.main_subject.type">ℹ️</span>
+                        <div class="tooltip">Type of main subject (e.g., "Person", "Product", "Animal", "Object")</div>
+                    </label>
+                    <input type="text" name="subjects_and_elements.main_subject.type" placeholder="Enter subject type">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Pose
+                        <span class="info-icon" data-field="subjects_and_elements.main_subject.pose">ℹ️</span>
+                        <div class="tooltip">Pose description (e.g., "Standing", "Sitting", "Action pose", "Relaxed")</div>
+                    </label>
+                    <input type="text" name="subjects_and_elements.main_subject.pose" placeholder="Enter pose">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Expression
+                        <span class="info-icon" data-field="subjects_and_elements.main_subject.expression">ℹ️</span>
+                        <div class="tooltip">Facial expression (e.g., "Happy", "Confident", "Neutral", "Focused")</div>
+                    </label>
+                    <input type="text" name="subjects_and_elements.main_subject.expression" placeholder="Enter expression">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Clothing
+                        <span class="info-icon" data-field="subjects_and_elements.main_subject.clothing">ℹ️</span>
+                        <div class="tooltip">Clothing description (e.g., "Business casual", "Athletic wear", "Formal")</div>
+                    </label>
+                    <input type="text" name="subjects_and_elements.main_subject.clothing" placeholder="Enter clothing">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Accessories
+                        <span class="info-icon" data-field="subjects_and_elements.main_subject.accessories">ℹ️</span>
+                        <div class="tooltip">Comma-separated accessories (e.g., "Watch, Sunglasses, Bag")</div>
+                    </label>
+                    <input type="text" name="subjects_and_elements.main_subject.accessories" placeholder="Enter accessories (comma-separated)">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Material
+                        <span class="info-icon" data-field="subjects_and_elements.main_subject.material">ℹ️</span>
+                        <div class="tooltip">Material type (e.g., "Metal", "Fabric", "Plastic", "Wood")</div>
+                    </label>
+                    <input type="text" name="subjects_and_elements.main_subject.material" placeholder="Enter material">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Texture
+                        <span class="info-icon" data-field="subjects_and_elements.main_subject.texture">ℹ️</span>
+                        <div class="tooltip">Texture description (e.g., "Smooth", "Textured", "Glossy", "Matte")</div>
+                    </label>
+                    <input type="text" name="subjects_and_elements.main_subject.texture" placeholder="Enter texture">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Secondary Elements
+                        <span class="info-icon" data-field="subjects_and_elements.secondary_elements">ℹ️</span>
+                        <div class="tooltip">Comma-separated secondary elements (e.g., "Plants, Books, Coffee cup")</div>
+                    </label>
+                    <input type="text" name="subjects_and_elements.secondary_elements" placeholder="Enter secondary elements (comma-separated)">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Symbolic Elements
+                        <span class="info-icon" data-field="subjects_and_elements.symbolic_elements">ℹ️</span>
+                        <div class="tooltip">Symbolic elements (e.g., "Light bulb", "Arrow", "Heart", "Shield")</div>
+                    </label>
+                    <input type="text" name="subjects_and_elements.symbolic_elements" placeholder="Enter symbolic elements (comma-separated)">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Props
+                        <span class="info-icon" data-field="subjects_and_elements.props">ℹ️</span>
+                        <div class="tooltip">Props or objects (e.g., "Laptop, Notebook, Pen")</div>
+                    </label>
+                    <input type="text" name="subjects_and_elements.props" placeholder="Enter props (comma-separated)">
+                </div>
+            </section>
+
+            <!-- Environment Details Section -->
+            <section class="form-section">
+                <h2>Environment Details</h2>
+
+                <div class="form-group">
+                    <label>
+                        Location Type
+                        <span class="info-icon" data-field="environment_details.location_type">ℹ️</span>
+                        <div class="tooltip">Location type (e.g., "Indoor", "Outdoor", "Urban", "Nature")</div>
+                    </label>
+                    <input type="text" name="environment_details.location_type" placeholder="Enter location type">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Time of Day
+                        <span class="info-icon" data-field="environment_details.time_of_day">ℹ️</span>
+                        <div class="tooltip">Time of day (e.g., "Morning", "Noon", "Evening", "Night")</div>
+                    </label>
+                    <input type="text" name="environment_details.time_of_day" placeholder="Enter time of day">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Weather
+                        <span class="info-icon" data-field="environment_details.weather">ℹ️</span>
+                        <div class="tooltip">Weather condition (e.g., "Sunny", "Cloudy", "Rainy", "Clear")</div>
+                    </label>
+                    <input type="text" name="environment_details.weather" placeholder="Enter weather">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Season
+                        <span class="info-icon" data-field="environment_details.season">ℹ️</span>
+                        <div class="tooltip">Season (e.g., "Spring", "Summer", "Fall", "Winter")</div>
+                    </label>
+                    <input type="text" name="environment_details.season" placeholder="Enter season">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Cultural Context
+                        <span class="info-icon" data-field="environment_details.cultural_context">ℹ️</span>
+                        <div class="tooltip">Cultural context (e.g., "Western", "Asian", "Global", "Local")</div>
+                    </label>
+                    <input type="text" name="environment_details.cultural_context" placeholder="Enter cultural context">
+                </div>
+            </section>
+
+            <!-- Text Content Section -->
+            <section class="form-section">
+                <h2>Text Content</h2>
+
+                <div class="form-group">
+                    <label>
+                        Headline
+                        <span class="info-icon" data-field="text_content.headline">ℹ️</span>
+                        <div class="tooltip">Main headline text (e.g., "Innovate Your Future", "Quality That Matters")</div>
+                    </label>
+                    <input type="text" name="text_content.headline" placeholder="Enter headline">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Subheadline
+                        <span class="info-icon" data-field="text_content.subheadline">ℹ️</span>
+                        <div class="tooltip">Subheadline text (e.g., "Discover new possibilities", "Experience the difference")</div>
+                    </label>
+                    <input type="text" name="text_content.subheadline" placeholder="Enter subheadline">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Body Text
+                        <span class="info-icon" data-field="text_content.body_text">ℹ️</span>
+                        <div class="tooltip">Main body text content</div>
+                    </label>
+                    <textarea name="text_content.body_text" placeholder="Enter body text" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Supporting Points
+                        <span class="info-icon" data-field="text_content.supporting_points">ℹ️</span>
+                        <div class="tooltip">Comma-separated supporting points (e.g., "Fast delivery, Quality guarantee, 24/7 support")</div>
+                    </label>
+                    <input type="text" name="text_content.supporting_points" placeholder="Enter supporting points (comma-separated)">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        CTA (Call to Action)
+                        <span class="info-icon" data-field="text_content.cta">ℹ️</span>
+                        <div class="tooltip">Call to action text (e.g., "Shop Now", "Learn More", "Get Started")</div>
+                    </label>
+                    <input type="text" name="text_content.cta" placeholder="Enter CTA">
+                </div>
+
+                <h3>Contact Information</h3>
+                <div class="form-group">
+                    <label>
+                        Contact Name
+                        <span class="info-icon" data-field="text_content.contact.name">ℹ️</span>
+                        <div class="tooltip">Contact person or company name</div>
+                    </label>
+                    <input type="text" name="text_content.contact.name" placeholder="Enter contact name">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Phone
+                        <span class="info-icon" data-field="text_content.contact.phone">ℹ️</span>
+                        <div class="tooltip">Phone number</div>
+                    </label>
+                    <input type="text" name="text_content.contact.phone" placeholder="Enter phone">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Email
+                        <span class="info-icon" data-field="text_content.contact.email">ℹ️</span>
+                        <div class="tooltip">Email address</div>
+                    </label>
+                    <input type="email" name="text_content.contact.email" placeholder="Enter email">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Social ID
+                        <span class="info-icon" data-field="text_content.contact.social_id">ℹ️</span>
+                        <div class="tooltip">Social media handle (e.g., "@companyname")</div>
+                    </label>
+                    <input type="text" name="text_content.contact.social_id" placeholder="Enter social ID">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Website
+                        <span class="info-icon" data-field="text_content.contact.website">ℹ️</span>
+                        <div class="tooltip">Website URL</div>
+                    </label>
+                    <input type="url" name="text_content.contact.website" placeholder="Enter website">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Location
+                        <span class="info-icon" data-field="text_content.contact.location">ℹ️</span>
+                        <div class="tooltip">Physical location or address</div>
+                    </label>
+                    <input type="text" name="text_content.contact.location" placeholder="Enter location">
+                </div>
+            </section>
+
+            <!-- Typography Section -->
+            <section class="form-section">
+                <h2>Typography</h2>
+
+                <div class="form-group">
+                    <label>
+                        Font Family
+                        <span class="info-icon" data-field="typography.font_family">ℹ️</span>
+                        <div class="tooltip">Font family (e.g., "Inter", "Roboto", "Playfair Display", "Helvetica")</div>
+                    </label>
+                    <input type="text" name="typography.font_family" placeholder="Enter font family">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Font Style
+                        <span class="info-icon" data-field="typography.font_style">ℹ️</span>
+                        <div class="tooltip">Font style (e.g., "Sans-serif", "Serif", "Display", "Monospace")</div>
+                    </label>
+                    <input type="text" name="typography.font_style" placeholder="Enter font style">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Headline Style
+                        <span class="info-icon" data-field="typography.headline_style">ℹ️</span>
+                        <div class="tooltip">Headline styling (e.g., "Bold, Uppercase", "Regular, Title case")</div>
+                    </label>
+                    <input type="text" name="typography.headline_style" placeholder="Enter headline style">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Body Style
+                        <span class="info-icon" data-field="typography.body_style">ℹ️</span>
+                        <div class="tooltip">Body text styling (e.g., "Regular", "Light", "Medium")</div>
+                    </label>
+                    <input type="text" name="typography.body_style" placeholder="Enter body style">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Font Weight
+                        <span class="info-icon" data-field="typography.font_weight">ℹ️</span>
+                        <div class="tooltip">Font weight (e.g., "300", "400", "600", "700")</div>
+                    </label>
+                    <input type="text" name="typography.font_weight" placeholder="Enter font weight">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Letter Spacing
+                        <span class="info-icon" data-field="typography.letter_spacing">ℹ️</span>
+                        <div class="tooltip">Letter spacing (e.g., "Normal", "Tight", "Wide", "0.5px")</div>
+                    </label>
+                    <input type="text" name="typography.letter_spacing" placeholder="Enter letter spacing">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Line Height
+                        <span class="info-icon" data-field="typography.line_height">ℹ️</span>
+                        <div class="tooltip">Line height (e.g., "1.5", "1.2", "Normal", "150%")</div>
+                    </label>
+                    <input type="text" name="typography.line_height" placeholder="Enter line height">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Text Alignment
+                        <span class="info-icon" data-field="typography.text_alignment">ℹ️</span>
+                        <div class="tooltip">Text alignment (e.g., "Left", "Center", "Right", "Justified")</div>
+                    </label>
+                    <input type="text" name="typography.text_alignment" placeholder="Enter text alignment">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Text Containers
+                        <span class="info-icon" data-field="typography.text_containers">ℹ️</span>
+                        <div class="tooltip">Text container style (e.g., "Box", "Overlay", "Transparent", "Card")</div>
+                    </label>
+                    <input type="text" name="typography.text_containers" placeholder="Enter text containers">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Readability Priority
+                        <span class="info-icon" data-field="typography.readability_priority">ℹ️</span>
+                        <div class="tooltip">Readability focus (e.g., "High", "Medium", "Decorative priority")</div>
+                    </label>
+                    <input type="text" name="typography.readability_priority" placeholder="Enter readability priority">
+                </div>
+            </section>
+
+            <!-- Branding Section -->
+            <section class="form-section">
+                <h2>Branding</h2>
+
+                <div class="form-group">
+                    <label>
+                        Logo Presence
+                        <span class="info-icon" data-field="branding.logo_presence">ℹ️</span>
+                        <div class="tooltip">Logo placement (e.g., "Prominent", "Subtle", "Top-left", "Bottom-right")</div>
+                    </label>
+                    <input type="text" name="branding.logo_presence" placeholder="Enter logo presence">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Logo Position
+                        <span class="info-icon" data-field="branding.logo_position">ℹ️</span>
+                        <div class="tooltip">Logo position (e.g., "Top-left", "Center", "Bottom-right")</div>
+                    </label>
+                    <input type="text" name="branding.logo_position" placeholder="Enter logo position">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Brand Colors Usage
+                        <span class="info-icon" data-field="branding.brand_colors_usage">ℹ️</span>
+                        <div class="tooltip">How brand colors are used (e.g., "Primary accent", "Full palette", "Subtle hints")</div>
+                    </label>
+                    <input type="text" name="branding.brand_colors_usage" placeholder="Enter brand colors usage">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Brand Consistency Rules
+                        <span class="info-icon" data-field="branding.brand_consistency_rules">ℹ️</span>
+                        <div class="tooltip">Brand consistency guidelines (e.g., "Follow brand guidelines", "Maintain color scheme")</div>
+                    </label>
+                    <input type="text" name="branding.brand_consistency_rules" placeholder="Enter brand consistency rules">
+                </div>
+            </section>
+
+            <!-- Platform Optimization Section -->
+            <section class="form-section">
+                <h2>Platform Optimization</h2>
+
+                <div class="form-group">
+                    <label>
+                        Platform
+                        <span class="info-icon" data-field="platform_optimization.platform">ℹ️</span>
+                        <div class="tooltip">Target platform (e.g., "Instagram", "Facebook", "Twitter", "LinkedIn", "Print")</div>
+                    </label>
+                    <input type="text" name="platform_optimization.platform" placeholder="Enter platform">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Safe Zones
+                        <span class="info-icon" data-field="platform_optimization.safe_zones">ℹ️</span>
+                        <div class="tooltip">Safe zone considerations (e.g., "Keep text in center", "Avoid edges")</div>
+                    </label>
+                    <input type="text" name="platform_optimization.safe_zones" placeholder="Enter safe zones">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Mobile Priority
+                        <span class="info-icon" data-field="platform_optimization.mobile_priority">ℹ️</span>
+                        <div class="tooltip">Mobile optimization priority (e.g., "High", "Medium", "Desktop-first")</div>
+                    </label>
+                    <input type="text" name="platform_optimization.mobile_priority" placeholder="Enter mobile priority">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Compression Tolerance
+                        <span class="info-icon" data-field="platform_optimization.compression_tolerance">ℹ️</span>
+                        <div class="tooltip">Compression tolerance (e.g., "High quality", "Acceptable quality loss", "Optimized")</div>
+                    </label>
+                    <input type="text" name="platform_optimization.compression_tolerance" placeholder="Enter compression tolerance">
+                </div>
+            </section>
+
+            <!-- Quality Section -->
+            <section class="form-section">
+                <h2>Quality</h2>
+
+                <div class="form-group">
+                    <label>
+                        Resolution
+                        <span class="info-icon" data-field="quality.resolution">ℹ️</span>
+                        <div class="tooltip">Image resolution (e.g., "1920x1080", "4K", "High res")</div>
+                    </label>
+                    <input type="text" name="quality.resolution" placeholder="Enter resolution">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        DPI
+                        <span class="info-icon" data-field="quality.dpi">ℹ️</span>
+                        <div class="tooltip">DPI/PPI (e.g., "300", "72", "150")</div>
+                    </label>
+                    <input type="text" name="quality.dpi" placeholder="Enter DPI">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Sharpness
+                        <span class="info-icon" data-field="quality.sharpness">ℹ️</span>
+                        <div class="tooltip">Sharpness level (e.g., "Sharp", "Soft", "Ultra-sharp")</div>
+                    </label>
+                    <input type="text" name="quality.sharpness" placeholder="Enter sharpness">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Detail Level
+                        <span class="info-icon" data-field="quality.detail_level">ℹ️</span>
+                        <div class="tooltip">Detail level (e.g., "High", "Medium", "Ultra-detailed")</div>
+                    </label>
+                    <input type="text" name="quality.detail_level" placeholder="Enter detail level">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Color Accuracy
+                        <span class="info-icon" data-field="quality.color_accuracy">ℹ️</span>
+                        <div class="tooltip">Color accuracy (e.g., "100% sRGB", "Wide gamut", "Accurate")</div>
+                    </label>
+                    <input type="text" name="quality.color_accuracy" placeholder="Enter color accuracy">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Noise Level
+                        <span class="info-icon" data-field="quality.noise_level">ℹ️</span>
+                        <div class="tooltip">Noise level (e.g., "No noise", "Minimal", "Acceptable")</div>
+                    </label>
+                    <input type="text" name="quality.noise_level" placeholder="Enter noise level">
+                </div>
+            </section>
+
+            <!-- Output Preferences Section -->
+            <section class="form-section">
+                <h2>Output Preferences</h2>
+
+                <div class="form-group">
+                    <label>
+                        Style Strength
+                        <span class="info-icon" data-field="output_preferences.style_strength">ℹ️</span>
+                        <div class="tooltip">Style application strength (e.g., "Strong", "Moderate", "Subtle")</div>
+                    </label>
+                    <input type="text" name="output_preferences.style_strength" placeholder="Enter style strength">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Creativity Level
+                        <span class="info-icon" data-field="output_preferences.creativity_level">ℹ️</span>
+                        <div class="tooltip">Creativity level (e.g., "High", "Medium", "Conservative")</div>
+                    </label>
+                    <input type="text" name="output_preferences.creativity_level" placeholder="Enter creativity level">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Variation Level
+                        <span class="info-icon" data-field="output_preferences.variation_level">ℹ️</span>
+                        <div class="tooltip">Variation level (e.g., "Multiple variations", "Single", "3 variations")</div>
+                    </label>
+                    <input type="text" name="output_preferences.variation_level" placeholder="Enter variation level">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Seed Control
+                        <span class="info-icon" data-field="output_preferences.seed_control">ℹ️</span>
+                        <div class="tooltip">Seed control (e.g., "Random", "Fixed seed", "Seed: 12345")</div>
+                    </label>
+                    <input type="text" name="output_preferences.seed_control" placeholder="Enter seed control">
+                </div>
+            </section>
+
+            <!-- Constraints Section -->
+            <section class="form-section">
+                <h2>Constraints</h2>
+
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" name="constraints.no_extra_text" checked>
+                        No Extra Text
+                        <span class="info-icon" data-field="constraints.no_extra_text">ℹ️</span>
+                        <div class="tooltip">Ensure no extra text appears in the image</div>
+                    </label>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" name="constraints.copyright_free" checked>
+                        Copyright Free
+                        <span class="info-icon" data-field="constraints.copyright_free">ℹ️</span>
+                        <div class="tooltip">Use only copyright-free elements</div>
+                    </label>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" name="constraints.social_media_safe" checked>
+                        Social Media Safe
+                        <span class="info-icon" data-field="constraints.social_media_safe">ℹ️</span>
+                        <div class="tooltip">Ensure content is appropriate for all social media platforms</div>
+                    </label>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" name="constraints.brand_safe" checked>
+                        Brand Safe
+                        <span class="info-icon" data-field="constraints.brand_safe">ℹ️</span>
+                        <div class="tooltip">Ensure content aligns with brand values</div>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Content Restrictions
+                        <span class="info-icon" data-field="constraints.content_restrictions">ℹ️</span>
+                        <div class="tooltip">Comma-separated restrictions (e.g., "No weapons, No violence, No adult content")</div>
+                    </label>
+                    <input type="text" name="constraints.content_restrictions" placeholder="Enter content restrictions (comma-separated)">
+                </div>
+            </section>
+
+            <!-- Negative Prompt Section -->
+            <section class="form-section">
+                <h2>Negative Prompt</h2>
+
+                <div class="form-group">
+                    <label>
+                        Excluded Styles
+                        <span class="info-icon" data-field="negative_prompt.excluded_styles">ℹ️</span>
+                        <div class="tooltip">Comma-separated styles to avoid (e.g., "Watercolor, Abstract, Cartoon")</div>
+                    </label>
+                    <input type="text" name="negative_prompt.excluded_styles" placeholder="Enter excluded styles (comma-separated)">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Excluded Colors
+                        <span class="info-icon" data-field="negative_prompt.excluded_colors">ℹ️</span>
+                        <div class="tooltip">Comma-separated colors to avoid (e.g., "Neon green, Bright pink")</div>
+                    </label>
+                    <input type="text" name="negative_prompt.excluded_colors" placeholder="Enter excluded colors (comma-separated)">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Excluded Elements
+                        <span class="info-icon" data-field="negative_prompt.excluded_elements">ℹ️</span>
+                        <div class="tooltip">Comma-separated elements to avoid (e.g., "Text overlay, Watermarks, Logos")</div>
+                    </label>
+                    <input type="text" name="negative_prompt.excluded_elements" placeholder="Enter excluded elements (comma-separated)">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Quality Issues
+                        <span class="info-icon" data-field="negative_prompt.quality_issues">ℹ️</span>
+                        <div class="tooltip">Quality issues to avoid (e.g., "Blurry, Pixelated, Low resolution")</div>
+                    </label>
+                    <input type="text" name="negative_prompt.quality_issues" placeholder="Enter quality issues to avoid (comma-separated)">
+                </div>
+            </section>
+
+            <!-- Metadata Section -->
+            <section class="form-section">
+                <h2>Metadata</h2>
+
+                <div class="form-group">
+                    <label>
+                        Version
+                        <span class="info-icon" data-field="metadata.version">ℹ️</span>
+                        <div class="tooltip">Version number (e.g., "1.0", "2.1")</div>
+                    </label>
+                    <input type="text" name="metadata.version" placeholder="Enter version">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Author
+                        <span class="info-icon" data-field="metadata.author">ℹ️</span>
+                        <div class="tooltip">Author name or creator</div>
+                    </label>
+                    <input type="text" name="metadata.author" placeholder="Enter author">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Creation Date
+                        <span class="info-icon" data-field="metadata.creation_date">ℹ️</span>
+                        <div class="tooltip">Creation date (e.g., "2024-01-15", "Today")</div>
+                    </label>
+                    <input type="text" name="metadata.creation_date" placeholder="Enter creation date">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Notes
+                        <span class="info-icon" data-field="metadata.notes">ℹ️</span>
+                        <div class="tooltip">Additional notes or comments</div>
+                    </label>
+                    <textarea name="metadata.notes" placeholder="Enter notes" rows="3"></textarea>
+                </div>
+            </section>
+
+            <button type="button" id="generateBtn" class="generate-btn">Generate JSON Prompt</button>
+        </form>
+
+        <div id="outputSection" class="output-section" style="display: none;">
+            <h2>Generated JSON Prompt</h2>
+            <textarea id="jsonOutput" readonly></textarea>
+            <button type="button" id="copyBtn" class="copy-btn">Copy to Clipboard</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
